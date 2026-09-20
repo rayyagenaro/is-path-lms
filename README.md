@@ -179,6 +179,7 @@ APP_KEY=base64:...
 APP_URL=https://nama-project.vercel.app
 DB_CONNECTION=pgsql
 DATABASE_URL=postgresql://user:password@host:5432/database?sslmode=require
+NEON_ENDPOINT_ID=ep-your-neon-endpoint
 ```
 
 Gunakan PostgreSQL yang dapat diakses dari internet (misalnya integrasi database
@@ -188,6 +189,11 @@ database production:
 ```bash
 php artisan migrate --seed --force
 ```
+
+Untuk Neon, aplikasi menggunakan `DATABASE_URL` pooled pada runtime Vercel dan
+`DATABASE_URL_UNPOOLED` saat menjalankan migration. Isi `NEON_ENDPOINT_ID`
+dengan label pertama host Neon (`ep-...`) agar klien PostgreSQL yang lebih lama
+tetap dapat memenuhi koneksi TLS Neon.
 
 Filesystem Vercel bersifat sementara. Konfigurasi deployment menggunakan cookie
 terenkripsi untuk session, cache in-memory per invocation, `/tmp` untuk compiled
