@@ -1,0 +1,15 @@
+.env
+.env.*
+.git
+.github
+.agents
+.codex
+node_modules
+tests
+test-results
+playwright-report
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+*.png

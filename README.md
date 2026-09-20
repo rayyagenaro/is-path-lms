@@ -168,6 +168,31 @@ npm run test:browser
 
 Browser test memakai database SQLite terpisah pada `storage/framework/testing` dan tidak menjalankan `migrate:fresh` terhadap database aplikasi.
 
+## Deployment Vercel
+
+Project menyediakan `vercel.json` dan entry point `api/index.php` untuk
+menjalankan Laravel melalui runtime komunitas `vercel-php`. Runtime production
+membutuhkan environment variable berikut di Vercel:
+
+```env
+APP_KEY=base64:...
+APP_URL=https://nama-project.vercel.app
+DB_CONNECTION=pgsql
+DATABASE_URL=postgresql://user:password@host:5432/database?sslmode=require
+```
+
+Gunakan PostgreSQL yang dapat diakses dari internet (misalnya integrasi database
+di Vercel Marketplace), kemudian jalankan migration dan seeder satu kali pada
+database production:
+
+```bash
+php artisan migrate --seed --force
+```
+
+Filesystem Vercel bersifat sementara. Konfigurasi deployment menggunakan cookie
+terenkripsi untuk session, cache in-memory per invocation, `/tmp` untuk compiled
+view, dan `stderr` untuk application log.
+
 ## Status verifikasi
 
 Pada pemeriksaan terakhir:
@@ -188,4 +213,3 @@ Jalankan kembali test setelah melakukan perubahan karena angka di atas menggamba
 ## Contributor
 
 - [rayyagenaro](https://github.com/rayyagenaro)
-
