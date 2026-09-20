@@ -37,6 +37,7 @@
         "CACHE_STORE": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
+        "SESSION_LIFETIME": "3",
         "SESSION_SECURE_COOKIE": "true"
     }
 }
