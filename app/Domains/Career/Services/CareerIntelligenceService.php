@@ -14,13 +14,20 @@ final class CareerIntelligenceService
     {
         $levels = DB::table('student_competencies')->where('student_id', $studentId)->pluck('proficiency_level', 'competency_id')->all();
 
-        return DB::table('career_roles as cr')
+        $roles = DB::table('career_roles as cr')
             ->join('career_clusters as cc', 'cc.id', '=', 'cr.career_cluster_id')
             ->where('cr.is_active', true)
             ->select('cr.*', 'cc.name as cluster_name', 'cc.slug as cluster_slug')
+            ->get();
+        $requirementsByRole = $this->requirementsForRoles($roles->pluck('id'));
+        $interestsByRole = DB::table('student_career_interests')
+            ->where('student_id', $studentId)
+            ->whereIn('career_role_id', $roles->pluck('id'))
             ->get()
-            ->map(function ($role) use ($studentId, $scores, $levels) {
-                $requirements = $this->requirements($role->id);
+            ->groupBy('career_role_id');
+
+        return $roles->map(function ($role) use ($scores, $levels, $requirementsByRole, $interestsByRole) {
+                $requirements = $requirementsByRole->get($role->id, collect());
                 $match = $this->recommendationEngine->calculate($scores, $requirements->map(fn ($item) => (array) $item)->all());
                 $readiness = $this->calculateReadiness($requirements, $levels);
                 $role->score = $match['score'];
@@ -28,25 +35,27 @@ final class CareerIntelligenceService
                 $role->details = $match['details'];
                 $role->readiness = $readiness;
                 $role->top_skills = $requirements->take(4)->pluck('name');
-                $role->interest_type = $this->interestType($studentId, $role->id);
+                $role->interest_type = $this->interestTypeFrom($interestsByRole->get($role->id, collect())->pluck('interest_type'));
                 return $role;
             })->sortByDesc('score')->values();
     }
 
     public function explorationRoles(?string $primaryInterest = null): Collection
     {
-        return DB::table('career_roles as cr')
+        $roles = DB::table('career_roles as cr')
             ->join('career_clusters as cc', 'cc.id', '=', 'cr.career_cluster_id')
             ->where('cr.is_active', true)
             ->select('cr.*', 'cc.name as cluster_name', 'cc.slug as cluster_slug')
             ->orderByRaw('CASE WHEN cc.name = ? THEN 0 ELSE 1 END', [$primaryInterest ?? ''])
             ->orderBy('cc.display_order')
             ->orderBy('cr.name')
-            ->get()
-            ->each(function ($role) {
-                $role->top_skills = $this->requirements($role->id)->take(4)->pluck('name');
-                $role->interest_type = null;
-            });
+            ->get();
+        $requirementsByRole = $this->requirementsForRoles($roles->pluck('id'));
+
+        return $roles->each(function ($role) use ($requirementsByRole) {
+            $role->top_skills = $requirementsByRole->get($role->id, collect())->take(4)->pluck('name');
+            $role->interest_type = null;
+        });
     }
 
     public function roleDetail(int $roleId, int $studentId, array $scores): object
@@ -114,6 +123,19 @@ final class CareerIntelligenceService
             ->where('r.job_role_id', $roleId)->select('r.*', 'c.name', 'c.category', 'c.category_group')->orderByDesc('r.weight')->get();
     }
 
+    private function requirementsForRoles(Collection $roleIds): Collection
+    {
+        if ($roleIds->isEmpty()) return collect();
+
+        return DB::table('career_role_competencies as r')
+            ->join('competencies as c', 'c.id', '=', 'r.competency_id')
+            ->whereIn('r.job_role_id', $roleIds)
+            ->select('r.*', 'c.name', 'c.category', 'c.category_group')
+            ->orderByDesc('r.weight')
+            ->get()
+            ->groupBy('job_role_id');
+    }
+
     private function calculateReadiness(Collection $requirements, array $levels): array
     {
         $weighted = 0.0;
@@ -143,7 +165,11 @@ final class CareerIntelligenceService
 
     private function interestType(int $studentId, int $roleId): ?string
     {
-        $types = DB::table('student_career_interests')->where('student_id', $studentId)->where('career_role_id', $roleId)->pluck('interest_type');
+        return $this->interestTypeFrom(DB::table('student_career_interests')->where('student_id', $studentId)->where('career_role_id', $roleId)->pluck('interest_type'));
+    }
+
+    private function interestTypeFrom(Collection $types): ?string
+    {
         if ($types->contains('target_active')) return 'target_active';
         if ($types->contains('explored')) return 'explored';
         return $types->first();
