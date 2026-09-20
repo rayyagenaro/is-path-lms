@@ -1,0 +1,884 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79/"
+     xml:base="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#addressesGap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#addressesGap">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessesCompetency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessesCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessesCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessmentOfCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#assessmentOfCourse">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#attemptOfAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#attemptOfAssessment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#attemptedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#attemptedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessmentAttempt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#belongsToCluster -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#belongsToCluster">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerRole"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerCluster"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#competencyPrerequisiteOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#competencyPrerequisiteOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyPrerequisite"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#competencyRecordOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#competencyRecordOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasStudentCompetency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#coursePrerequisiteOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#coursePrerequisiteOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCoursePrerequisite"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#demonstratedByProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#demonstratedByProject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectDemonstrate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromAttempt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromAttempt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromEnrollment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromEnrollment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromSubmission -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#derivedFromSubmission">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#enrolledInCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#enrolledInCourse">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEnrollment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#enrollmentOfStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#enrollmentOfStudent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCourseEnrollment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#evidenceFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#evidenceFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEvidence"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapBasedOnRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapBasedOnRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapBasedOnStudentCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapBasedOnStudentCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapOfRecommendation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#gapOfRecommendation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyGap"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#generatedFromRecommendation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#generatedFromRecommendation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessmentAttempt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessmentAttempt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessmentItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasAssessmentItem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfAssessment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerProfile -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerProfile">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#profileOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerRecommendation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerRecommendation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendationFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCareerRole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerCluster"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyGap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyGap">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyPrerequisite -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCompetencyPrerequisite">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCourseCompetencyMapping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCourseCompetencyMapping">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#mappingOfCourse"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCourseEnrollment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCourseEnrollment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCoursePrerequisite -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasCoursePrerequisite">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEnrollment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEnrollment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEvidence -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasEvidence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasInterestArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasInterestArea">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#InterestArea"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasLearningPath -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasLearningPath">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#learningPathFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasLearningPathItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasLearningPathItem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfLearningPath"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasModule -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasModule">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#moduleOfCourse"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasModulePrerequisite -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasModulePrerequisite">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#modulePrerequisiteOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasProject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectOfCourse"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasProjectSubmission -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasProjectSubmission">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submissionOfProject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasRequirement">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requirementOfCareer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasStudentCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasStudentCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasSubmittedProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#hasSubmittedProject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submittedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#interestedInCareer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#interestedInCareer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#isTargetOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#isTargetOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#targetsCareer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfAssessment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfLearningPath -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#itemOfLearningPath">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#learningPathFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#learningPathFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#mappingOfCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#mappingOfCourse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#moduleOfCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#moduleOfCourse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#modulePrerequisiteOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#modulePrerequisiteOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#pathTargetsCareer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#pathTargetsCareer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#prefersWorkStyle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#prefersWorkStyle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#WorkStyle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#profileOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#profileOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectDemonstrate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectDemonstrate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectOfCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#projectOfCourse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendationFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendationFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendsCareer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendsCareer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendsCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recommendsCourse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recordsCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#recordsCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#relatedCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#relatedCompetency">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#relatedCompetency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#relatedToInterestArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#relatedToInterestArea">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#InterestArea"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requiredByCareerRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requiredByCareerRequirement">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requiresCompetency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requirementOfCareer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requirementOfCareer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requiresCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#requiresCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submissionOfProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submissionOfProject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#submittedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#suitedForWorkStyle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#suitedForWorkStyle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#WorkStyle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#targetsCareer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#targetsCareer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#taughtThroughMapping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#taughtThroughMapping">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#teachesCompetency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#teachesCompetency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#teachesCompetency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Assessment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentAttempt"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#AssessmentItem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#BusinessCompetency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#BusinessCompetency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerCluster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerCluster"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerProfile"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRecommendation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRequirement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CareerRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyEvidence"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CompetencyGap"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Course"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseCompetencyMapping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#CourseEnrollment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#InterestArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#InterestArea"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPath"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#LearningPathItem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Module"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProfessionalCompetency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProfessionalCompetency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Project"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#ProjectSubmission"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Student"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#StudentCompetency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#TechnicalCompetency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#TechnicalCompetency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#Competency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#WorkStyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2026/8/untitled-ontology-79#WorkStyle"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
