@@ -31,3 +31,6 @@ yarn-error.log
 /ui-check.ts
 /*.png
 /gambar logo is-path.jpg
+
+/.vercel
+/.env.local
